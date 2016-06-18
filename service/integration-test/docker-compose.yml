@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  integration-tester:
+    build: .
+    links:
+      - testdocker
+  testdocker:
+    build: ../..
+    command: npm start
+    expose:
+      - "8080"
